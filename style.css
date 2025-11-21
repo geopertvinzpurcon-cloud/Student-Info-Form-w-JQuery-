@@ -1,0 +1,81 @@
+/* Pine Green Background */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #00351c;
+    text-align: center;
+    margin: 0;
+    padding: 40px 10px;
+}
+
+/* White Form Container */
+.container {
+    width: 90%;
+    max-width: 450px;
+    background: rgb(255, 255, 255);
+    padding: 30px;
+    border-radius: 12px;
+    margin: auto;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+}
+
+/* Logo */
+.logo {
+    width: 120px;
+    margin-bottom: 10px;
+}
+
+input, select {
+    width: 90%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border: 1px solid #aaa;
+    font-size: 15px;
+}
+
+.label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    text-align: left;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Animated Other Gender Box */
+#otherGenderContainer {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s ease;
+}
+
+#otherGenderContainer.show {
+    max-height: 100px;
+}
+
+/* Buttons */
+.button-row {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    width: 45%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button[type="submit"] {
+    background: #28a745;
+    color: white;
+}
+
+button[type="reset"] {
+    background: #dc3545;
+    color: white;
+}
