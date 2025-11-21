@@ -17,45 +17,102 @@
 
     <p><strong>Fill in your details below</strong></p>
 
-    <form id="studentForm">
+    <form id="studentForm" novalidate>
 
-        <input type="text" name="firstname" placeholder="First Name">
-        <input type="text" name="lastname" placeholder="Last Name">
-        <input type="email" name="email" placeholder="Email">
-        <input type="password" name="password" placeholder="Password">
-        <input type="number" name="age" min="1" placeholder="Age">
+        <div class="form-group">
+            <input class="form-control validate" type="text" name="firstname" placeholder="First Name"
+                   data-validate="name" data-minlength="2" data-maxlength="30"
+                   data-pattern="^[A-Za-zÀ-ÖØ-öø-ÿ' \-]+$"
+                   data-msg="Please enter your first name"
+                   data-msg-invalid="First name must be 2–30 letters; spaces, hyphens and apostrophes allowed.">
+            <span class="error-msg" aria-live="polite"></span>
+        </div>
+
+        <div class="form-group">
+            <input class="form-control validate" type="text" name="lastname" placeholder="Last Name"
+                   data-validate="name" data-minlength="2" data-maxlength="30"
+                   data-pattern="^[A-Za-zÀ-ÖØ-öø-ÿ' \-]+$"
+                   data-msg="Please enter your last name"
+                   data-msg-invalid="Last name must be 2–30 letters; spaces, hyphens and apostrophes allowed.">
+            <span class="error-msg" aria-live="polite"></span>
+        </div>
+
+        <div class="form-group">
+            <input class="form-control validate" type="email" name="email" placeholder="Email"
+                   data-validate="email"
+                   data-msg="Please enter your email"
+                   data-msg-invalid="Please enter a valid email address (e.g. name@example.com)">
+            <span class="error-msg" aria-live="polite"></span>
+        </div>
+
+        <div class="form-group">
+            <input class="form-control validate" type="password" name="password" placeholder="Password"
+                   data-validate="password" data-minlength="6" data-maxlength="12"
+                   data-msg="Please enter a password"
+                   data-msg-invalid="Password must be 6–12 characters and include at least one letter and one number.">
+            <span class="error-msg" aria-live="polite"></span>
+        </div>
+
+        <div class="form-group">
+            <input class="form-control validate" type="number" name="age" min="18" max="100" placeholder="Age"
+                   data-validate="age" data-min="18" data-max="100"
+                   data-msg="Please enter your age"
+                   data-msg-invalid="Age must be an integer between 18 and 100.">
+            <span class="error-msg" aria-live="polite"></span>
+        </div>
 
         <!-- Gender Dropdown -->
         <label class="label">Gender:</label>
-        <select name="gender" id="genderSelect">
-            <option value="" disabled selected>Select Gender</option>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            <option value="others">Others</option>
-        </select>
+        <div class="form-group">
+            <select class="form-control validate" name="gender" id="genderSelect"
+                    data-validate="select" data-msg="Please select your gender"
+                    data-msg-invalid="Please select a gender option.">
+                <option value="" disabled selected>Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="others">Others</option>
+            </select>
+            <span class="error-msg" aria-live="polite"></span>
+        </div>
 
-        <!-- Animated Hidden Text Box -->
-        <div id="otherGenderContainer" class="hidden">
-            <input type="text" id="otherGenderBox" name="otherGender" 
-                   placeholder="Please specify">
+        <!-- Animated Hidden Text Box: "Other" gender -->
+        <div id="otherGenderContainer" class="hidden form-group">
+            <input class="form-control validate" type="text" id="otherGenderBox" name="otherGender"
+                   placeholder="Please specify"
+                   data-validate="text"
+                   data-pattern="^[A-Za-zÀ-ÖØ-öø-ÿ' \-]+$"
+                   data-minlength="2" data-maxlength="30"
+                   data-msg="Please specify your gender"
+                   data-msg-invalid="Please use letters only (no numbers); 2–30 characters allowed.">
+            <span class="error-msg" aria-live="polite"></span>
         </div>
 
         <!-- Program -->
         <label class="label">Select Program:</label>
-        <select name="program">
-            <option>BSIT</option>
-            <option>BSCpE</option>
-            <option>BSED</option>
-            <option>BEED</option>
-        </select>
+        <div class="form-group">
+            <select class="form-control validate" name="program"
+                    data-validate="select" data-msg="Please select a program">
+                <option value="" disabled selected>Select Program</option>
+                <option value="BSIT">BSIT</option>
+                <option value="BSCpE">BSCpE</option>
+                <option value="BSED">BSED</option>
+                <option value="BEED">BEED</option>
+            </select>
+            <span class="error-msg" aria-live="polite"></span>
+        </div>
 
         <!-- Section -->
         <label class="label">Section:</label>
-        <select name="section">
-            <option>1A</option>
-            <option>1B</option>
-            <option>1C</option>
-        </select>
+        <div class="form-group">
+            <select class="form-control validate" name="section"
+                    data-validate="select" data-msg="Please select a section">
+                <option value="" disabled selected>Select Section</option>
+                <option value="1A">1A</option>
+                <option value="1B">1B</option>
+                <option value="1C">1C</option>
+            </select>
+            <span class="error-msg" aria-live="polite"></span>
+        </div>
 
         <div class="button-row">
             <button type="submit">Submit</button>
@@ -68,6 +125,9 @@
 
 </div>
 
+<!-- jQuery CDN -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Your script -->
 <script src="script.js"></script>
 </body>
 </html>
