@@ -1,73 +1,49 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Information Form</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Student Info Form</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-
-<div class="container">
-
+  <div class="container">
     <img src="schoolLogo.jpg" alt="School Logo" class="logo">
+    <h1>Student Registration</h1>
 
-    <h2>Student Details Form</h2>
-    <hr>
+    <form id="student-form" novalidate>
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" name="firstName" class="validate" data-field="First Name">
+        <span class="error-text" aria-live="polite"></span>
+      </div>
 
-    <p><strong>Fill in your details below</strong></p>
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" name="lastName" class="validate" data-field="Last Name">
+        <span class="error-text" aria-live="polite"></span>
+      </div>
 
-    <form id="studentForm">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" class="validate" data-field="Email">
+        <span class="error-text" aria-live="polite"></span>
+      </div>
 
-        <input type="text" name="firstname" placeholder="First Name">
-        <input type="text" name="lastname" placeholder="Last Name">
-        <input type="email" name="email" placeholder="Email">
-        <input type="password" name="password" placeholder="Password">
-        <input type="number" name="age" min="1" placeholder="Age">
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" class="validate" data-field="Phone">
+        <span class="error-text" aria-live="polite"></span>
+      </div>
 
-        <!-- Gender Dropdown -->
-        <label class="label">Gender:</label>
-        <select name="gender" id="genderSelect">
-            <option value="" disabled selected>Select Gender</option>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            <option value="others">Others</option>
-        </select>
-
-        <!-- Animated Hidden Text Box -->
-        <div id="otherGenderContainer" class="hidden">
-            <input type="text" id="otherGenderBox" name="otherGender" 
-                   placeholder="Please specify">
-        </div>
-
-        <!-- Program -->
-        <label class="label">Select Program:</label>
-        <select name="program">
-            <option>BSIT</option>
-            <option>BSCpE</option>
-            <option>BSED</option>
-            <option>BEED</option>
-        </select>
-
-        <!-- Section -->
-        <label class="label">Section:</label>
-        <select name="section">
-            <option>1A</option>
-            <option>1B</option>
-            <option>1C</option>
-        </select>
-
-        <div class="button-row">
-            <button type="submit">Submit</button>
-            <button type="reset" id="resetBtn">Reset</button>
-        </div>
+      <div class="actions">
+        <button type="submit">Submit</button>
+      </div>
     </form>
+  </div>
 
-    <p>© 2025 Student Information Form</p>
-    <p>© Created by Purcon/Fulgencio</p>
-
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
